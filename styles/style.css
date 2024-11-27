@@ -99,7 +99,7 @@ input {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
+  object-position: center;
 }
 
 /* здесь будут стили для form, fieldset, label и input */
@@ -117,12 +117,14 @@ input {
 
 .search-form__label {
   display: flex;
+  align-items: center;
   gap: 5px;
   width: fit-content;
 }
 
 .search-form__checkbox-list .search-form__label:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -163,7 +165,6 @@ input {
   width: 19px;
   height: 19px;
   border: 1px solid #fff;
-  cursor: pointer;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox {
@@ -172,7 +173,6 @@ input {
   outline-offset: -3px;
   background-color: #fff;
   background-position: center;
-
 }
 
 .search-form__submit-button {
@@ -180,7 +180,6 @@ input {
   height: fit-content;
   margin-top: auto;
   padding: 6px 73.5px;
-
 }
 
 /* секция content-details */
@@ -192,7 +191,7 @@ input {
 
 .title {
   padding: 0 139px 26px 0;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
   line-height: 0.94;
@@ -205,7 +204,7 @@ input {
 
 .content__list {
   position: relative;
-  max-height: 298px;
+  height: 298px;
   overflow: auto;
 }
 
@@ -224,19 +223,19 @@ input {
   background-color: #545050;
 }
 
-.content__card-link_current:hover {
+.content__card-link:hover {
   text-decoration: underline;
 }
 
-.content__card-link_current:active {
+.content__card-link:active {
   background-color: #545050;
 }
 
-.content__card-link_current:focus {
+.content__card-link:focus {
   outline: none;
 }
 
-.content__card-link_current:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #fff;
 }
 
@@ -248,11 +247,14 @@ input {
 .content__video-card-title {
   margin-bottom: 6px;
   color: #fff;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 1;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description-container {
